@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://www.primary.com/.well-known/oauth-authorization-server
+  (scopes_supported) — Shopify Customer Account API
+schemes:
+- name: ShopifyCustomerAccountOIDC
+  source: well-known/primary-oauth-authorization-server.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://shopify.com/authentication/30430134331/oauth/authorize
+    tokenUrl: https://shopify.com/authentication/30430134331/oauth/token
+scopes:
+- scope: openid
+  description: OIDC authentication; issue an ID token for the signed-in customer.
+  flows: [authorizationCode]
+- scope: email
+  description: Access the customer's email address claim.
+  flows: [authorizationCode]
+- scope: customer-account-api:full
+  description: Full access to the Shopify Customer Account API on behalf of the signed-in customer.
+  flows: [authorizationCode]
+- scope: customer-account-mcp-api:full
+  description: Full access to the Shopify Customer Account MCP API for agent-driven customer operations.
+  flows: [authorizationCode]

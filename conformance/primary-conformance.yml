@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  Shopify Customer Account API discovery documents at
+  https://www.primary.com/.well-known/openid-configuration and
+  /.well-known/oauth-authorization-server
+standards:
+- id: oauth2
+  conforms: true
+  evidence: RFC 8414 authorization-server metadata published; authorizationCode flow + PKCE + refresh_token grant.
+- id: oidc
+  conforms: true
+  evidence: OIDC discovery document published; RS256 id_token signing; standard OIDC claims (iss/sub/aud/exp/iat/nonce/sid/email).
+- id: mcp
+  conforms: true
+  evidence: Hosted MCP server (protocol 2025-06-18) at /api/mcp advertising tools/prompts/resources capabilities.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404.

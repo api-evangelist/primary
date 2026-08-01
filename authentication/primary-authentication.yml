@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://www.primary.com/.well-known/openid-configuration and
+  /.well-known/oauth-authorization-server (Shopify Customer Account API discovery)
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode]
+  grant_types: [authorization_code, refresh_token, 'urn:ietf:params:oauth:grant-type:jwt-bearer']
+  notes: >-
+    primary.com is a Shopify storefront; buyer-facing authentication is handled by
+    Shopify's Customer Account API (OAuth2 + OIDC). No first-party API of Primary's
+    own — the storefront exposes an open MCP server for catalog/cart plus this
+    OAuth2/OIDC surface for customer-scoped operations.
+schemes:
+- name: ShopifyCustomerAccountOIDC
+  type: openIdConnect
+  issuer: https://shopify.com/authentication/30430134331
+  authorization_endpoint: https://shopify.com/authentication/30430134331/oauth/authorize
+  token_endpoint: https://shopify.com/authentication/30430134331/oauth/token
+  jwks_uri: https://shopify.com/authentication/30430134331/.well-known/jwks.json
+  id_token_signing_alg: [RS256]
+  token_endpoint_auth_methods: [client_secret_basic]
+  pkce: true
+  sources: [well-known/primary-openid-configuration.json]
