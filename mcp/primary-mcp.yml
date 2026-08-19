@@ -9,21 +9,34 @@ server:
   url: https://www.primary.com/api/mcp
   protocol_version: '2025-06-18'
   vendor: Shopify Storefront MCP
-  capabilities: [tools, prompts, resources, logging]
+  capabilities:
+  - tools
+  - prompts
+  - resources
+  - logging
 auth:
-  note: >-
-    Read/browse tools are open. Buyer-scoped cart/checkout flows use Shopify's
-    Customer Account API (OAuth2/OIDC, scope customer-account-mcp-api:full) —
-    see well-known/primary-oauth-authorization-server.json and
-    authentication/primary-authentication.yml.
+  note: Read/browse tools are open. Buyer-scoped cart/checkout flows use Shopify's Customer Account API
+    (OAuth2/OIDC, scope customer-account-mcp-api:full) — see well-known/primary-oauth-authorization-server.json
+    and authentication/primary-authentication.yml.
 tools:
 - name: search_catalog
-  description: Search for products from the online store, hosted on Shopify (natural-language and/or filter queries; paginated).
+  description: Search for products from the online store, hosted on Shopify (natural-language and/or filter
+    queries; paginated).
 - name: get_product_details
   description: Look up a product by ID; pass options to select a specific variant for the product card.
 - name: get_cart
-  description: Get the cart including items, shipping options, discount info, and checkout URL for a given cart id.
+  description: Get the cart including items, shipping options, discount info, and checkout URL for a given
+    cart id.
 - name: update_cart
-  description: Add/remove/update line items, buyer info, shipping, discount codes, gift cards and notes in one consolidated call.
+  description: Add/remove/update line items, buyer info, shipping, discount codes, gift cards and notes
+    in one consolidated call.
 - name: search_shop_policies_and_faqs
   description: Get facts about the store's policies, products, or services.
+deployment:
+  mode: remote
+  endpoint: https://www.primary.com/api/mcp
+  verified: probed
+  probe: live
+  tools: 1
+  checked: '2026-08-12'
+  source: catalog MCP census
