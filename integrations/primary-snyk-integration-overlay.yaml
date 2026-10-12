@@ -1,0 +1,30 @@
+# DERIVED by build-integration-preconfigs.py (roadmap#949). Overlay on the PARTNER's contract:
+# where snyk's enum names primary, and what that value is.
+overlay: 1.0.0
+info:
+  title: primary as a processor-connection in snyk's contract
+  version: 1.0.0
+extends: https://raw.githubusercontent.com/api-evangelist/snyk/refs/heads/main/openapi/snyk-findings-api-openapi.yml
+actions:
+- target: $.components.schemas.FindingAttributes.properties.problems.items.oneOf[3].properties.cvss_sources.items.properties.type.allOf[0]
+  update:
+    x-apievangelist-integration:
+      values:
+        primary:
+          provider: primary
+          relationship: processor-connection
+          evidence: https://github.com/api-evangelist/snyk/blob/main/openapi/snyk-findings-api-openapi.yml
+      method: derived
+      generated: '2026-10-12'
+      generator: build-integration-preconfigs.py
+- target: $.components.schemas.FindingAttributes.properties.problems.items.oneOf[3].properties.exploit_details.allOf[0].properties.maturity_levels.items.properties.type.allOf[0]
+  update:
+    x-apievangelist-integration:
+      values:
+        primary:
+          provider: primary
+          relationship: processor-connection
+          evidence: https://github.com/api-evangelist/snyk/blob/main/openapi/snyk-findings-api-openapi.yml
+      method: derived
+      generated: '2026-10-12'
+      generator: build-integration-preconfigs.py

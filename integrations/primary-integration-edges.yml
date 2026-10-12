@@ -1,0 +1,31 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/primary/integrations
+- https://n8n.io/integrations/primary/
+- https://composio.dev/toolkits/primary
+- https://monid.ai/tools/primary
+checked:
+- https://composio.dev/toolkits/primary
+- https://monid.ai/tools/primary
+- https://n8n.io/integrations/primary/
+- https://zapier.com/apps/primary/integrations
+summary: null
+marketplace_apps: []
+edges:
+- partner_name: snyk
+  partner: snyk
+  partner_match: domain
+  type: contract
+  channel: partner-built
+  relationship: processor-connection
+  direction: partner-built
+  evidence: https://github.com/api-evangelist/snyk/blob/main/openapi/snyk-findings-api-openapi.yml
+  contract_reference:
+    repo: snyk
+    spec_file: snyk-findings-api-openapi.yml
+    value: primary
+    property: FindingAttributes.problems.cvss_sources
+    detected_by: detect-payment-method-edges.py
+    detected: '2026-10-12'
+templates: []
