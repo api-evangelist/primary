@@ -21,3 +21,35 @@
     detected: '2026-10-12'
   status: not-a-workflow
   arazzo: null
+- slug: primary-oeko-tex-textile-certification
+  label: OEKO-TEX (textile certification)
+  partner_name: OEKO-TEX (textile certification)
+  category: OEKO-TEX certified textile / leather products
+  type: register
+  channel: standard-directory
+  evidence: https://services.oeko-tex.com/buying-guide/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: OEKO-TEX Buying Guide (services.oeko-tex.com/buying-guide/, public lookup)
+    standard: OEKO-TEX (STANDARD 100 / LEATHER STANDARD / STeP / ECO PASSPORT / MADE IN GREEN / ...)
+    spec_file: null
+    role: oeko-tex-certified
+    registered_name: Primary Kids, Inc.
+    register_country: United States
+    matched_domain: primary.com
+    matched_by: domain
+    certified_products:
+    - product: OEKO-TEX STANDARD 100
+      standard_code: '100'
+      certified_entities:
+      - Primary Kids, Inc.
+      lapsed: false
+    signal_note: certified_products = one entry per OEKO-TEX standard held, never per certificate or site; the Buying
+      Guide lists only currently valid certificates, so lapse is not observable (lapsed False = listed on the read
+      date). Looked up by the provider's catalog name; the certified company linked by its profile website (domain
+      + name check)
+    detected_by: sweep-fashion-apparel.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
